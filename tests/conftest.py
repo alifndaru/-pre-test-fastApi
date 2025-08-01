@@ -8,7 +8,7 @@ from sqlalchemy.pool import StaticPool
 
 from app.main import app
 from app.database import get_async_session, Base
-from app.models import User, Task
+from app.models import User, Task, Category
 
 # Test database URL - menggunakan SQLite untuk testing
 TEST_DATABASE_URL = "sqlite+aiosqlite:///./test.db"

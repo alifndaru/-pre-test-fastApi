@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from app.models.task import Task
+    from app.models.category import Category
 
 class User(Base):
     __tablename__ = "users"
@@ -16,3 +17,4 @@ class User(Base):
     
     # Relationships
     tasks: Mapped[list["Task"]] = relationship("Task", back_populates="owner", cascade="all, delete-orphan")
+    categories: Mapped[list["Category"]] = relationship("Category", back_populates="owner", cascade="all, delete-orphan")
